@@ -1,0 +1,17 @@
+{
+    "name": "Na Mira do Cupido - Barraca do Beijo",
+    "short_name": "Na Mira do Cupido",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1b4414",
+    "description": "Na Mira do Cupido: onde a flecha acerta o alvo e o beijo acontece!",
+    "icons": [
+    {
+        "src": "./frontend/assets/img/logopwa.png",
+        "sizes": "192x192",
+        "type": "image.png",
+        "purpose": "any"
+    }
+]
+}
