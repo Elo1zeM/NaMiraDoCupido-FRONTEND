@@ -4,21 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Na Mira do Cupido | Arraiá 2026</title>
 
-    <title>Na Mira do Cupido</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        montserrat: ['Montserrat', 'sans-serif']
-                    },
+                    fontFamily: { montserrat: ['Montserrat', 'sans-serif'] },
                     colors: {
                         primary: '#e11d48',
                         secondary: '#fb7185',
@@ -35,527 +30,292 @@
     </script>
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
-            background:
-                radial-gradient(circle at top left, rgba(251, 113, 133, 0.15), transparent 30%),
-                radial-gradient(circle at bottom right, rgba(225, 29, 72, 0.12), transparent 30%),
-                #fff8f8;
+            background: radial-gradient(circle at top left, rgba(251, 113, 133, 0.15), transparent 30%),
+                        radial-gradient(circle at bottom right, rgba(225, 29, 72, 0.12), transparent 30%), #fff8f8;
         }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(16px);
-        }
-
+        .glass { background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(16px); }
         .gradient-text {
-            background: linear-gradient(90deg, #e11d48, #fb7185);
-
-            /* primeiro o padrão */
-            background-clip: text;
-            color: transparent;
-
-            /* depois o WebKit para compatibilidade */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #e11d48 0%, #fb7185 100%);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(225, 29, 72, .35);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px);
-        }
-
-        .heart {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.08);
-            }
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
+    background: linear-gradient(90deg, #e11d48, #fb7185);
+    -webkit-background-clip: text;
+    background-clip: text; /* Versão padrão para navegadores modernos */
+    -webkit-text-fill-color: transparent; /* Faz a cor do texto ficar transparente para revelar o gradiente */
+    color: transparent; /* Backup para garantir a transparência */
+}
+        .btn-primary { background: linear-gradient(135deg, #e11d48 0%, #fb7185 100%); transition: 0.3s; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(225, 29, 72, .35); }
+        .card-hover:hover { transform: translateY(-8px); }
+        .heart { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 
 <body class="font-montserrat text-gray-800 overflow-x-hidden">
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 border-b border-rose-100/50 glass transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-rose-100/50 glass h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
             <a href="#home" class="flex items-center gap-3">
-                <img src="./assets/img/dec.png" class="h-12 heart" />
+                <img src="./assets/img/dec.png" class="h-12 heart" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2589/2589175.png'" />
                 <div>
-                    <h1 class="font-black text-xl gradient-text">
-                        Na Mira do Cupido
-                    </h1>
-                    <p class="text-[10px] uppercase tracking-[0.3em] text-rose-400 font-bold">
-                        Barraca do Beijo
-                    </p>
+                    <h1 class="font-black text-xl gradient-text">Na Mira do Cupido</h1>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-rose-400 font-bold">Barraca do Beijo</p>
                 </div>
             </a>
-
-            <button onclick="toggleMenu()"
-                class="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:bg-white transition">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
-                </svg>
+            <button onclick="toggleMenu()" class="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:bg-white transition text-primary shadow-sm">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
-
         </div>
     </nav>
 
-    <!-- MENU -->
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-80 bg-white z-[80] translate-x-full transition-all duration-500 shadow-2xl">
-
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-white z-[80] translate-x-full transition-all duration-500 shadow-2xl">
         <div class="p-8 flex justify-between items-center border-b">
-            <h2 class="font-black text-primary text-2xl">
-                Menu
-            </h2>
-
-            <button onclick="toggleMenu()" class="text-4xl text-gray-400 hover:text-primary">
-                &times;
-            </button>
+            <h2 class="font-black text-primary text-2xl">Menu</h2>
+            <button onclick="toggleMenu()" class="text-4xl text-gray-400 hover:text-primary">&times;</button>
         </div>
-
         <div class="p-6 flex flex-col gap-3">
-
-            <a href="#home" class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
-                🏹 Página Inicial
-            </a>
-
-            <a href="#servicos" class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
-                🎁 Produtos
-            </a>
-
-            <a href="#servicos" class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
-                💌 Correio Elegante
-            </a>
-
-            <a href="#servicos" class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
-                🎟️ Ingressos
-            </a>
-
+            <a href="#home" onclick="toggleMenu()" class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">🏹 Início</a>
+            <a href="#servicos" onclick="toggleMenu()" class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">🎁 Ver Mimos</a>
         </div>
-
     </div>
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-[70]"></div>
 
-    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-[70]">
-    </div>
-
-    <!-- HERO -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-
-        <!-- Blur Background -->
-        <div class="absolute top-[-100px] left-[-100px] w-[350px] h-[350px] bg-rose-300/30 blur-3xl rounded-full">
-        </div>
-
-        <div class="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-pink-300/30 blur-3xl rounded-full">
-        </div>
-
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
         <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-
-            <!-- TEXT -->
             <div>
-
-                <span
-                    class="inline-flex items-center gap-2 bg-white shadow-card px-5 py-2 rounded-full text-primary font-bold text-sm">
-                    💘 Festa Junina 2026
-                </span>
-
+                <span class="inline-flex items-center gap-2 bg-white shadow-card px-5 py-2 rounded-full text-primary font-bold text-sm">💘 Festa Junina 2026</span>
                 <h1 class="mt-8 text-5xl md:text-7xl font-black leading-[1.05] text-dark">
-                    Acerte o coração de alguém
-                    com o
-                    <span class="gradient-text">
-                        Cupido.
-                    </span>
+                    Acerte o coração com o <span class="gradient-text">Cupido.</span>
                 </h1>
-
                 <p class="mt-6 text-lg text-rose-900/70 leading-relaxed max-w-xl">
-                    Escolha presentes, cartas, ingressos e mimos apaixonantes
-                    para surpreender alguém especial no arraiá mais romântico do ano.
+                    Escolha presentes, cartas e mimos apaixonantes para o arraiá mais romântico do ano.
                 </p>
-
-                <div class="mt-10 flex flex-wrap gap-4">
-
-                    <a href="#servicos"
-                        class="btn-primary text-white px-8 py-4 rounded-2xl font-extrabold uppercase tracking-wide transition-all">
-                        Ver Mimos
-                    </a>
-
-                    <button class="glass border border-white px-8 py-4 rounded-2xl font-bold hover:bg-white transition">
-                        ❤️ Apaixone alguém
-                    </button>
-
+                <div class="mt-10">
+                    <a href="#servicos" class="btn-primary text-white px-10 py-5 rounded-2xl font-extrabold uppercase tracking-wide inline-block shadow-glow">Ver Cardápio</a>
                 </div>
-
             </div>
-
-            <!-- IMAGE -->
             <div class="relative flex justify-center">
-
-                <div class="absolute inset-0 bg-gradient-to-r from-rose-300/30 to-pink-300/30 blur-3xl rounded-full">
-                </div>
-
-                <img src="./assets/img/logo.png" class="relative w-full max-w-md drop-shadow-2xl heart" />
-
+                <img src="./assets/img/logo.png" class="relative w-full max-w-md drop-shadow-2xl heart" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2904/2904973.png'" />
             </div>
-
         </div>
-
     </section>
 
-    <!-- CATEGORIAS -->
-    <section id="servicos" class="max-w-7xl mx-auto px-6 pb-32">
-
+    <section id="servicos" class="max-w-7xl mx-auto px-6 pb-40">
         <div class="text-center mb-14">
-
-            <span class="text-primary font-black uppercase tracking-[0.3em] text-xs">
-                Catálogo
-            </span>
-
-            <h2 class="mt-3 text-4xl md:text-5xl font-black text-dark">
-                Escolha seu mimo 💝
-            </h2>
-
+            <span class="text-primary font-black uppercase tracking-[0.3em] text-xs">Catálogo</span>
+            <h2 class="mt-3 text-4xl md:text-5xl font-black text-dark">Escolha seu mimo 💝</h2>
         </div>
-
-        <!-- NAV -->
-        <div class="flex justify-center mb-14 overflow-x-auto no-scrollbar">
-            <nav id="nav-categoria" class="glass rounded-3xl p-3 flex gap-3 border border-white/50 shadow-card">
-            </nav>
-        </div>
-
-        <!-- TITLE -->
-        <h2 id="categoria-titulo" class="text-center text-3xl font-black text-dark mb-12">
-            Carregando...
-        </h2>
-
-        <!-- PRODUTOS -->
+        
         <div id="lista-produtos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <p class="col-span-full text-center text-rose-300">Preparando as flechas do Cupido...</p>
         </div>
-
     </section>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-rose-100 bg-white/70 backdrop-blur-lg">
+    <div id="btn-revisar-container" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] hidden w-full px-6 max-w-md">
+        <button onclick="abrirModal()" class="w-full btn-primary text-white py-5 rounded-2xl font-extrabold shadow-glow flex items-center justify-center gap-3 text-lg">
+            <span>🛒</span> REVISAR PEDIDO (<span id="cart-count">0</span>)
+        </button>
+    </div>
 
-        <div class="max-w-7xl mx-auto px-6 py-14 text-center">
+    <div id="modal-revisao" class="fixed inset-0 z-[110] hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-md" onclick="fecharModal()"></div>
+        <div class="absolute bottom-0 left-0 w-full bg-white rounded-t-[40px] p-8 max-h-[92vh] overflow-y-auto shadow-2xl">
+            <div class="max-w-2xl mx-auto">
+                <div class="flex justify-between items-center mb-8">
+                    <div>
+                        <h2 class="text-3xl font-black text-dark">Seu Pedido</h2>
+                        <p class="text-rose-400 font-medium">Confira seus mimos antes de enviar</p>
+                    </div>
+                    <button onclick="fecharModal()" class="w-12 h-12 flex items-center justify-center bg-soft rounded-full text-primary text-2xl font-bold">&times;</button>
+                </div>
+                
+                <div id="itens-carrinho" class="space-y-6 mb-10">
+                    </div>
 
-            <img src="./assets/img/dec.png" class="h-32 mx-auto mb-5 opacity-60" />
-
-            <h3 class="font-black text-2xl gradient-text">
-                Na Mira do Cupido
-            </h3>
-
-            <p class="mt-3 text-rose-900/50">
-                O arraiá mais apaixonante da cidade 💘
-            </p>
-
-            <p class="mt-8 text-xs uppercase tracking-[0.4em] text-gray-400 font-bold">
-                © 2026 • Todos os direitos reservados
-            </p>
-
+                <div class="border-t border-rose-100 pt-8 pb-4">
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-xl font-bold text-gray-400">Total do Pedido:</span>
+                        <span id="total-pedido" class="text-4xl font-black text-primary">R$ 0,00</span>
+                    </div>
+                    <button onclick="finalizarWhatsApp()" class="w-full bg-[#25D366] text-white py-5 rounded-2xl font-black text-xl shadow-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
+                        ENVIAR PARA O CUPIDO (WhatsApp)
+                    </button>
+                </div>
+            </div>
         </div>
+    </div>
 
+    <footer class="py-12 text-center text-rose-300 text-sm border-t border-rose-100 bg-white/50">
+        <p>&copy; 2026 Na Mira do Cupido - Sorocaba/SP</p>
     </footer>
 
-    <!-- CARRINHO -->
-    <div id="carrinho-footer"
-        class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-40 w-[92%] max-w-lg bg-dark text-white rounded-[28px] p-5 z-[90] shadow-2xl transition-all duration-500 flex justify-between items-center">
-
-        <div class="flex items-center gap-4">
-
-            <div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-2xl">
-                🛍️
-            </div>
-
-            <div>
-
-                <p class="text-xs uppercase tracking-[0.3em] text-white/50 font-bold">
-                    Carrinho
-                </p>
-
-                <h3 id="carrinho-total" class="font-black text-2xl">
-                    R$ 0,00
-                </h3>
-
-            </div>
-
-        </div>
-
-        <button class="btn-primary px-6 py-3 rounded-2xl font-black uppercase text-sm transition-all">
-            Revisar
-        </button>
-
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
+        // CONFIGURAÇÕES SUPABASE FORNECIDAS
+        const SUPABASE_URL = 'https://byslhgoryfhwhkxhklrj.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_pP8N05O2b0vdXEJBx4W5AA__Q66I83B';
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-        const API_URL = 'https://17-3-aula7-alpha-k2wz.vercel.app/api';
-        let carrinho = [];
+        let produtosAtuais = [];
+        let carrinho = {};
+
+        // 1. GERADOR DE URL DE IMAGEM (BUCKET: imgs)
+      function getImageUrl(imagemNoBanco) {
+    if (!imagemNoBanco) return 'https://via.placeholder.com/400x400?text=Cupido';
+
+    // Verifica se o texto começa com "http" (ou seja, se já é uma URL completa)
+    if (imagemNoBanco.startsWith('http')) {
+        return imagemNoBanco;
+    }
+
+    // Se não for uma URL, ele busca no seu Bucket do Supabase (como estava antes)
+    const { data } = _supabase.storage.from('imgs').getPublicUrl(imagemNoBanco);
+    return data.publicUrl;
+}
+
+        // 2. BUSCAR DADOS DA TABELA: produtos1
+        async function fetchProdutos() {
+            const { data, error } = await _supabase
+                .from('produtos1')
+                .select('*')
+                .order('nome', { ascending: true });
+
+            if (error) {
+                console.error("Erro Supabase:", error);
+                document.getElementById('lista-produtos').innerHTML = "<p class='text-center text-red-500'>Erro ao conectar com o Cupido.</p>";
+                return;
+            }
+            produtosAtuais = data;
+            renderProdutos();
+        }
+
+        // 3. RENDERIZAR GRID DE PRODUTOS
+        function renderProdutos() {
+    const lista = document.getElementById('lista-produtos');
+    lista.innerHTML = produtosAtuais.map(p => `
+        <div class="bg-white p-5 rounded-[32px] shadow-card card-hover transition-all border border-rose-50 flex flex-col h-full">
+            
+            <div class="relative w-full pt-[100%] mb-5 rounded-2xl overflow-hidden shadow-inner group">
+                <img src="${getImageUrl(p.imagem)}" 
+                     class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                     onerror="this.src='https://via.placeholder.com/400x400?text=Cupido'">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                
+                <div class="absolute top-3 right-3 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full font-black text-primary shadow-sm border border-rose-100 text-sm">
+                    R$ ${p.preco.toFixed(2)}
+                </div>
+            </div>
+
+            <div class="px-2 flex-1 flex flex-col">
+                <h3 class="font-bold text-dark text-lg mb-2 leading-tight">${p.nome}</h3>
+                <p class="text-gray-400 text-sm mb-5 line-clamp-2 flex-1">${p.descricao || ''}</p>
+                
+                <button onclick="addToCart(${p.id})" 
+                    class="w-full py-4 rounded-2xl bg-soft text-primary font-black hover:bg-primary hover:text-white transition-all transform active:scale-95 mt-auto">
+                    Adicionar +
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+        // 4. LÓGICA DO CARRINHO
+        function addToCart(id) {
+            carrinho[id] = (carrinho[id] || 0) + 1;
+            updateUI();
+            
+            // Pequeno feedback visual ao clicar
+            const btn = document.getElementById('btn-revisar-container');
+            btn.classList.add('animate-bounce');
+            setTimeout(() => btn.classList.remove('animate-bounce'), 500);
+        }
+
+        function changeQty(id, delta) {
+            carrinho[id] += delta;
+            if (carrinho[id] <= 0) delete carrinho[id];
+            updateUI();
+            renderCart();
+            
+            // Se o carrinho esvaziar, fecha o modal
+            if (Object.keys(carrinho).length === 0) fecharModal();
+        }
+
+        function updateUI() {
+            const count = Object.values(carrinho).reduce((a, b) => a + b, 0);
+            document.getElementById('cart-count').innerText = count;
+            document.getElementById('btn-revisar-container').classList.toggle('hidden', count === 0);
+        }
+
+        // 5. MODAL DE REVISÃO (ESTILO CARRINHO)
+        function renderCart() {
+            const container = document.getElementById('itens-carrinho');
+            let total = 0;
+            let html = '';
+
+            for (const id in carrinho) {
+                const p = produtosAtuais.find(prod => prod.id == id);
+                if (!p) continue;
+                
+                const subtotal = p.preco * carrinho[id];
+                total += subtotal;
+
+                html += `
+                    <div class="flex items-center gap-5 bg-rose-50/40 p-5 rounded-[28px] border border-rose-100/50">
+                        <img src="${getImageUrl(p.imagem)}" class="w-20 h-20 rounded-2xl object-cover shadow-sm border border-white">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-dark text-lg leading-tight">${p.nome}</h4>
+                            <p class="text-primary font-black text-lg">R$ ${p.preco.toFixed(2)}</p>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white px-4 py-2.5 rounded-2xl shadow-sm border border-rose-100">
+                            <button onclick="changeQty(${id}, -1)" class="text-primary font-black text-2xl w-8 h-8 flex items-center justify-center hover:bg-rose-50 rounded-lg">-</button>
+                            <span class="font-bold text-xl min-w-[24px] text-center">${carrinho[id]}</span>
+                            <button onclick="changeQty(${id}, 1)" class="text-primary font-black text-2xl w-8 h-8 flex items-center justify-center hover:bg-rose-50 rounded-lg">+</button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+            document.getElementById('total-pedido').innerText = `R$ ${total.toFixed(2)}`;
+        }
+
+        function abrirModal() {
+            renderCart();
+            const modal = document.getElementById('modal-revisao');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-revisao').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
 
         function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const overlay = document.getElementById('overlay');
-
-            menu.classList.toggle('translate-x-full');
-            overlay.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('translate-x-full');
+            document.getElementById('overlay').classList.toggle('hidden');
         }
 
-        async function carregarCategoria() {
+        function finalizarWhatsApp() {
+            let msg = "*Novo Pedido - Na Mira do Cupido 💘*\n\n";
+            let total = 0;
 
-            try {
-
-                const res = await fetch(`${API_URL}/categorias`);
-                const categorias = await res.json();
-
-                renderizarBotoes(categorias);
-
-                if (categorias.length > 0) {
-                    selecionarCategoria(categorias[0].id, categorias[0].nome);
-                }
-
-            } catch (e) {
-
-                console.error(e);
-
+            for (const id in carrinho) {
+                const p = produtosAtuais.find(prod => prod.id == id);
+                msg += `• ${carrinho[id]}x ${p.nome} - R$ ${(p.preco * carrinho[id]).toFixed(2)}\n`;
+                total += p.preco * carrinho[id];
             }
 
+            msg += `\n*Total: R$ ${total.toFixed(2)}*`;
+            const url = `https://wa.me/5515992345678?text=${encodeURIComponent(msg)}`; // Ajuste o seu número aqui
+            window.open(url, '_blank');
         }
 
-        function renderizarBotoes(categorias) {
-
-            const nav = document.getElementById('nav-categoria');
-            nav.innerHTML = '';
-
-            categorias.forEach(cat => {
-
-                const btn = document.createElement('button');
-
-                btn.className =
-                    'btn-cat px-6 py-3 rounded-2xl font-bold transition-all whitespace-nowrap';
-
-                btn.innerText = cat.nome;
-
-                btn.dataset.id = cat.id;
-
-                btn.onclick = () => selecionarCategoria(cat.id, cat.nome);
-
-                nav.appendChild(btn);
-
-            });
-
-        }
-
-        async function selecionarCategoria(id, nome) {
-
-            document.getElementById('categoria-titulo').innerHTML =
-                `✨ ${nome} ✨`;
-
-            document.querySelectorAll('.btn-cat').forEach(btn => {
-
-                if (btn.dataset.id == id) {
-
-                    btn.classList.add(
-                        'bg-primary',
-                        'text-white',
-                        'shadow-lg'
-                    );
-
-                    btn.classList.remove(
-                        'bg-white',
-                        'text-gray-600'
-                    );
-
-                } else {
-
-                    btn.classList.remove(
-                        'bg-primary',
-                        'text-white',
-                        'shadow-lg'
-                    );
-
-                    btn.classList.add(
-                        'bg-white',
-                        'text-gray-600'
-                    );
-
-                }
-
-            });
-
-            carregarProdutos(id);
-
-        }
-
-        async function carregarProdutos(categoriaId) {
-
-            const lista = document.getElementById('lista-produtos');
-
-            lista.innerHTML =
-                `<div class="col-span-full text-center py-24">
-                    <div class="animate-pulse text-primary font-black text-xl">
-                        💘 Procurando mimos...
-                    </div>
-                </div>`;
-
-            try {
-
-                const res = await fetch(`${API_URL}/produtos`);
-                const produtos = await res.json();
-
-                const filtrados = produtos.filter(p =>
-                    (p.categoria_id || p.categoriaid || p.categoriaId) == categoriaId
-                );
-
-                renderizarProdutos(filtrados);
-
-            } catch (e) {
-
-                lista.innerHTML = 'Erro ao carregar produtos.';
-
-            }
-
-        }
-
-        function renderizarProdutos(produtos) {
-
-            const lista = document.getElementById('lista-produtos');
-
-            lista.innerHTML = '';
-
-            produtos.forEach(p => {
-
-                const img =
-                    p.imagem && p.imagem.startsWith('http')
-                        ? p.imagem
-                        : `./assets/img/${p.imagem || 'logo.png'}`;
-
-                const card = document.createElement('div');
-
-                card.className =
-                    'bg-white/80 backdrop-blur-lg rounded-[32px] overflow-hidden border border-white shadow-card card-hover transition-all duration-300';
-
-                card.innerHTML = `
-                
-                    <div class="aspect-square bg-soft p-8 flex items-center justify-center overflow-hidden">
-                        <img src="${img}" 
-                            class="max-w-full max-h-full object-contain hover:scale-110 transition duration-500"
-                            onerror="this.src='./assets/img/logo.png'">
-                    </div>
-
-                    <div class="p-6">
-
-                        <h3 class="font-black text-xl text-dark">
-                            ${p.nome}
-                        </h3>
-
-                        <p class="text-sm text-gray-500 mt-2 line-clamp-2">
-                            ${p.descricao || 'Presente especial para alguém especial 💘'}
-                        </p>
-
-                        <div class="mt-6 flex items-center justify-between">
-
-                            <span class="text-2xl font-black text-primary">
-                                R$ ${Number(p.preco).toFixed(2).replace('.', ',')}
-                            </span>
-
-                            <button onclick="adicionarItem('${p.id}','${p.nome}', ${p.preco})"
-                                class="btn-primary px-5 py-3 rounded-2xl text-white font-bold transition-all">
-                                Comprar
-                            </button>
-
-                        </div>
-
-                    </div>
-                
-                `;
-
-                lista.appendChild(card);
-
-            });
-
-        }
-
-        function adicionarItem(id, nome, preco) {
-
-            const item = carrinho.find(i => i.id === id);
-
-            if (item) {
-
-                item.quantidade++;
-
-            } else {
-
-                carrinho.push({
-                    id,
-                    nome,
-                    preco,
-                    quantidade: 1
-                });
-
-            }
-
-            atualizarCarrinho();
-
-        }
-
-        function atualizarCarrinho() {
-
-            const total = carrinho.reduce(
-                (acc, item) => acc + item.preco * item.quantidade,
-                0
-            );
-
-            document.getElementById('carrinho-total').innerText =
-                total.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL'
-                });
-
-            const footer =
-                document.getElementById('carrinho-footer');
-
-            if (carrinho.length > 0) {
-
-                footer.classList.remove('translate-y-40');
-
-            } else {
-
-                footer.classList.add('translate-y-40');
-
-            }
-
-        }
-
-        carregarCategoria();
-
+        // Início
+        fetchProdutos();
     </script>
-
 </body>
 
 </html>
