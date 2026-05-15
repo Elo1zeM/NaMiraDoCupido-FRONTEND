@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Final | Na Mira do Cupido</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        primary: '#e11d48',
+                        secondary: '#fb7185',
+                        dark: '#4c0519',
+                        soft: '#fff1f2'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(251,113,133,.15), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(225,29,72,.12), transparent 30%),
+                #fff8f8;
+            min-height: 100vh;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #e11d48, #fb7185);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="font-montserrat text-gray-800">
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+
+        <div class="text-center mb-10">
+
+            <span class="text-primary font-black uppercase tracking-[0.3em] text-xs">
+                Última Etapa
+            </span>
+
+            <h1 class="text-4xl md:text-5xl font-black text-dark mt-3">
+                Finalizar Pedido 💘
+            </h1>
+
+        </div>
+
+        <div class="bg-white rounded-[40px] shadow-2xl border border-rose-100 p-8 md:p-10">
+
+            <!-- PAGAMENTOS -->
+            <div class="bg-soft rounded-[30px] p-6 border border-rose-100 mb-8">
+
+                <p class="text-sm font-black uppercase tracking-[0.2em] text-rose-400 mb-5">
+                    Escolha a Forma de Pagamento
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <!-- PIX -->
+                    <label class="cursor-pointer">
+                        <input type="radio" name="pagamento" class="hidden peer" checked>
+
+                        <div class="bg-white border border-rose-100 rounded-2xl p-5 peer-checked:border-primary peer-checked:ring-4 peer-checked:ring-rose-200 transition-all">
+
+                            <h3 class="font-black text-dark text-lg">
+                                📱 PIX
+                            </h3>
+
+                            <p class="text-gray-400 text-sm mt-1">
+                                Pagamento instantâneo
+                            </p>
+
+                        </div>
+                    </label>
+
+                    <!-- DÉBITO -->
+                    <label class="cursor-pointer">
+                        <input type="radio" name="pagamento" class="hidden peer">
+
+                        <div class="bg-white border border-rose-100 rounded-2xl p-5 peer-checked:border-primary peer-checked:ring-4 peer-checked:ring-rose-200 transition-all">
+
+                            <h3 class="font-black text-dark text-lg">
+                                💳 Débito
+                            </h3>
+
+                            <p class="text-gray-400 text-sm mt-1">
+                                Cartão débito na barraca
+                            </p>
+
+                        </div>
+                    </label>
+
+                    <!-- CRÉDITO -->
+                    <label class="cursor-pointer">
+                        <input type="radio" name="pagamento" class="hidden peer">
+
+                        <div class="bg-white border border-rose-100 rounded-2xl p-5 peer-checked:border-primary peer-checked:ring-4 peer-checked:ring-rose-200 transition-all">
+
+                            <h3 class="font-black text-dark text-lg">
+                                💎 Crédito
+                            </h3>
+
+                            <p class="text-gray-400 text-sm mt-1">
+                                Crédito à vista
+                            </p>
+
+                        </div>
+                    </label>
+
+                    <!-- PARCELADO -->
+                    <label class="cursor-pointer">
+                        <input type="radio" name="pagamento" class="hidden peer">
+
+                        <div class="bg-white border border-rose-100 rounded-2xl p-5 peer-checked:border-primary peer-checked:ring-4 peer-checked:ring-rose-200 transition-all">
+
+                            <h3 class="font-black text-dark text-lg">
+                                🧾 Parcelado
+                            </h3>
+
+                            <p class="text-gray-400 text-sm mt-1">
+                                Parcelamento no cartão
+                            </p>
+
+                            <select class="mt-4 w-full bg-soft border border-rose-100 rounded-xl px-4 py-3 outline-none">
+
+                                <option>2x sem juros</option>
+                                <option>3x sem juros</option>
+                                <option>4x sem juros</option>
+                                <option>5x sem juros</option>
+                                <option>6x sem juros</option>
+
+                            </select>
+
+                        </div>
+                    </label>
+
+                    <!-- DINHEIRO -->
+                    <label class="cursor-pointer md:col-span-2">
+                        <input type="radio" name="pagamento" class="hidden peer">
+
+                        <div class="bg-white border border-rose-100 rounded-2xl p-5 peer-checked:border-primary peer-checked:ring-4 peer-checked:ring-rose-200 transition-all">
+
+                            <h3 class="font-black text-dark text-lg">
+                                💵 Dinheiro na Hora
+                            </h3>
+
+                            <p class="text-gray-400 text-sm mt-1">
+                                Pagamento presencial na barraca
+                            </p>
+
+                        </div>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- RESUMO -->
+<div class="bg-soft rounded-[30px] p-6 border border-rose-100 mb-8">
+
+    <p class="text-sm font-black uppercase tracking-[0.2em] text-rose-400 mb-4">
+        Resumo do Pedido
+    </p>
+
+    <div id="lista-itens"></div>
+
+    <div class="flex justify-between items-center pt-4 border-t border-rose-100 mt-4">
+
+        <span class="text-lg font-black text-dark">
+            Total
+        </span>
+
+        <span id="total-geral" class="text-3xl font-black text-primary">
+            R$ 0,00
+        </span>
+
+    </div>
+
+</div>
+
+            <!-- BOTÃO -->
+            <button
+                onclick="window.location.href='pedido-feito.html'"
+                class="w-full bg-primary hover:bg-dark text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] transition-all shadow-xl">
+
+                Finalizar Pedido 💝
+
+            </button>
+
+        </div>
+
+    </main>
+<script>
+    const pedido = JSON.parse(localStorage.getItem('pedidoAtual'));
+
+    const lista = document.getElementById('lista-itens');
+    const totalEl = document.getElementById('total-geral');
+
+    let total = 0;
+
+    if (pedido && pedido.itens && pedido.itens.length > 0) {
+
+        pedido.itens.forEach(item => {
+
+            total += item.subtotal;
+
+            lista.innerHTML += `
+                <div class="flex items-center justify-between bg-white p-4 rounded-2xl border border-rose-100 mb-3">
+
+                    <div>
+                        <h3 class="font-bold text-dark">
+                            ${item.quantidade}x ${item.nome}
+                        </h3>
+
+                        <p class="text-sm text-rose-400">
+                            R$ ${item.preco.toFixed(2)} cada
+                        </p>
+                    </div>
+
+                    <p class="font-black text-primary text-lg">
+                        R$ ${item.subtotal.toFixed(2)}
+                    </p>
+
+                </div>
+            `;
+        });
+
+        totalEl.innerText = `R$ ${total.toFixed(2)}`;
+
+    } else {
+        lista.innerHTML = `<p class="text-gray-400">Nenhum item encontrado</p>`;
+    }
+</script>
+</body>
+
+</html>

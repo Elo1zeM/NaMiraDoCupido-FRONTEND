@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Pedidos | Na Mira do Cupido</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -32,26 +33,47 @@
     <style>
         body {
             background: radial-gradient(circle at top left, rgba(251, 113, 133, 0.15), transparent 30%),
-                        radial-gradient(circle at bottom right, rgba(225, 29, 72, 0.12), transparent 30%), #fff8f8;
+                radial-gradient(circle at bottom right, rgba(225, 29, 72, 0.12), transparent 30%), #fff8f8;
             min-height: 100vh;
         }
-        .glass { background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(16px); }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+        }
+
         .gradient-text {
             background: linear-gradient(90deg, #e11d48, #fb7185);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
+
         .card-order {
             transition: all 0.3s ease;
             border: 1px solid rgba(225, 29, 72, 0.1);
         }
+
         .card-order:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(225, 29, 72, 0.1);
         }
-        .heart-mini { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        .heart-mini {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
     </style>
 </head>
 
@@ -60,15 +82,31 @@
     <nav class="sticky top-0 left-0 w-full z-50 border-b border-rose-100/50 glass h-20 flex items-center">
         <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="./assets/img/dec.png" class="h-10 heart-mini" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2589/2589175.png'" />
+                <img src="./assets/img/dec.png" class="h-10 heart-mini"
+                    onerror="this.src='https://cdn-icons-png.flaticon.com/512/2589/2589175.png'" />
                 <div>
                     <h1 class="font-black text-lg md:text-xl gradient-text leading-none">Painel do Cupido</h1>
-                    <p class="text-[9px] uppercase tracking-[0.2em] text-rose-400 font-bold">Gerenciamento de Pedidos</p>
+                    <p class="text-[9px] uppercase tracking-[0.2em] text-rose-400 font-bold">Gerenciamento de Pedidos
+                    </p>
                 </div>
             </div>
-            <button onclick="location.reload()" class="bg-primary hover:bg-dark text-white text-xs font-black px-6 py-3 rounded-2xl transition-all shadow-glow uppercase tracking-wider">
-                Atualizar Lista
-            </button>
+            <div class="flex items-center gap-3">
+
+                <a href="/"
+                    class="bg-soft hover:bg-rose-100 text-primary text-xs font-black px-6 py-3 rounded-2xl transition-all uppercase tracking-wider border border-rose-100">
+
+                    Voltar ao Início
+
+                </a>
+
+                <button onclick="location.reload()"
+                    class="bg-primary hover:bg-dark text-white text-xs font-black px-6 py-3 rounded-2xl transition-all shadow-glow uppercase tracking-wider">
+
+                    Atualizar Lista
+
+                </button>
+
+            </div>
         </div>
     </nav>
 
@@ -88,7 +126,8 @@
         </div>
 
         <div id="containerPedidos" class="grid gap-6">
-            <div id="loadingBox" class="bg-white p-12 rounded-[40px] shadow-card border border-rose-50 text-center flex flex-col items-center">
+            <div id="loadingBox"
+                class="bg-white p-12 rounded-[40px] shadow-card border border-rose-50 text-center flex flex-col items-center">
                 <div class="w-20 h-20 bg-soft rounded-full flex items-center justify-center mb-6 animate-bounce">
                     <span class="text-4xl">💌</span>
                 </div>
@@ -113,11 +152,11 @@
 
         async function carregarPedidos() {
             const container = document.getElementById('containerPedidos');
-            
+
             // Aqui você deve colocar o nome da sua tabela de PEDIDOS (ex: 'pedidos1')
             // Se ainda não criou a tabela de pedidos, mude para 'produtos1' apenas para testar o layout
             const { data, error } = await _supabase
-                .from('produtos1') // Mude para o nome da sua tabela de pedidos real
+                .from('pedidos1') // Mude para o nome da sua tabela de pedidos real
                 .select('*')
                 .order('created_at', { ascending: false });
 
@@ -137,7 +176,7 @@
         function renderizarPedidos(pedidos) {
             const container = document.getElementById('containerPedidos');
             const contador = document.getElementById('contadorPedidos');
-            
+
             if (pedidos.length === 0) {
                 container.innerHTML = `<p class="text-center py-10 text-rose-300 font-medium">Nenhum pedido encontrado por enquanto... 💔</p>`;
                 contador.innerText = "0 pedidos";
@@ -147,26 +186,73 @@
             contador.innerText = `${pedidos.length} ${pedidos.length === 1 ? 'pedido' : 'pedidos'}`;
 
             container.innerHTML = pedidos.map(pedido => `
-                <div class="bg-white p-6 md:p-8 rounded-[35px] shadow-card card-order flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                    <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 bg-soft rounded-2xl flex items-center justify-center text-2xl shadow-sm">
-                            🎁
-                        </div>
-                        <div>
-                            <h3 class="font-black text-dark text-lg">${pedido.nome || 'Pedido Especial'}</h3>
-                            <p class="text-rose-400 text-sm font-semibold italic">Preço: R$ ${pedido.preco.toFixed(2)}</p>
-                        </div>
+                <div class="bg-white p-6 md:p-8 rounded-[35px] shadow-card card-order flex flex-col gap-6">
+
+    <div class="flex items-center justify-between gap-6 flex-wrap">
+
+        <div class="flex items-center gap-5">
+
+            <div class="w-14 h-14 bg-soft rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+                💘
+            </div>
+
+            <div>
+
+                <h3 class="font-black text-dark text-lg">
+                    ${pedido.cliente_nome || 'Cliente'}
+                </h3>
+
+                <p class="text-rose-400 text-sm font-semibold italic">
+                    Total: R$ ${pedido.total.toFixed(2)}
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="bg-soft text-primary px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider">
+            ${pedido.status || 'pendente'}
+        </span>
+
+    </div>
+
+    <div class="bg-rose-50/40 rounded-2xl p-5 border border-rose-100">
+
+        <p class="text-xs uppercase tracking-[0.2em] text-rose-400 font-black mb-4">
+            Produtos do Pedido
+        </p>
+
+        <div class="space-y-3">
+
+            ${pedido.itens.map(item => `
+
+                <div class="flex justify-between items-center bg-white p-4 rounded-2xl">
+
+                    <div>
+
+                        <h4 class="font-bold text-dark">
+                            ${item.quantidade}x ${item.nome}
+                        </h4>
+
+                        <p class="text-rose-400 text-sm">
+                            R$ ${item.preco.toFixed(2)} cada
+                        </p>
+
                     </div>
-                    
-                    <div class="flex items-center gap-3 w-full md:w-auto">
-                        <button class="flex-1 md:flex-none bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold text-xs transition-colors uppercase tracking-widest shadow-md">
-                            Concluir
-                        </button>
-                        <button class="flex-1 md:flex-none bg-soft hover:bg-rose-100 text-primary px-6 py-3 rounded-xl font-bold text-xs transition-colors uppercase tracking-widest">
-                            Detalhes
-                        </button>
-                    </div>
+
+                    <p class="font-black text-primary">
+                        R$ ${item.subtotal.toFixed(2)}
+                    </p>
+
                 </div>
+
+            `).join('')}
+
+        </div>
+
+    </div>
+
+</div>
             `).join('');
         }
 
@@ -177,4 +263,5 @@
         setInterval(carregarPedidos, 30000);
     </script>
 </body>
+
 </html>

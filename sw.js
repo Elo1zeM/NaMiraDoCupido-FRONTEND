@@ -2,6 +2,11 @@ const CACHE_NAME = 'cupido-cache-v1';
 const ASSETS = [
     './',
     './index.html',
+    './pagamento.html',
+    './pagamento-final.html',
+    './pedidos.html',
+    './pedido-feito.html',
+    './index.html',
     './manifest.json',
     './assets/img/logo.png',
     './assets/img/whatsapp.png',

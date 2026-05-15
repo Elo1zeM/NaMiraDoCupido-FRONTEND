@@ -1,0 +1,139 @@
+<!-- pedido-feito.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Feito | Na Mira do Cupido</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { montserrat: ['Montserrat', 'sans-serif'] },
+                    colors: {
+                        primary: '#e11d48',
+                        secondary: '#fb7185',
+                        dark: '#4c0519',
+                        soft: '#fff1f2'
+                    },
+                    boxShadow: {
+                        glow: '0 10px 40px rgba(225,29,72,.18)',
+                        card: '0 20px 45px rgba(0,0,0,.06)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(251, 113, 133, 0.15), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(225, 29, 72, 0.12), transparent 30%),
+                #fff8f8;
+            min-height: 100vh;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #e11d48, #fb7185);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .heart-mini {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-montserrat text-gray-800">
+
+    <nav class="sticky top-0 left-0 w-full z-50 border-b border-rose-100/50 glass h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+                <img src="./assets/img/dec.png"
+                    class="h-10 heart-mini"
+                    onerror="this.src='https://cdn-icons-png.flaticon.com/512/2589/2589175.png'" />
+
+                <div>
+                    <h1 class="font-black text-lg md:text-xl gradient-text leading-none">
+                        Na Mira do Cupido
+                    </h1>
+
+                    <p class="text-[9px] uppercase tracking-[0.2em] text-rose-400 font-bold">
+                        Pedido Confirmado
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-16">
+
+        <div class="bg-white rounded-[40px] shadow-card border border-rose-100 p-10 md:p-14 text-center">
+
+            <div class="w-28 h-28 bg-soft rounded-full flex items-center justify-center mx-auto mb-8 animate-bounce">
+                <span class="text-5xl">💘</span>
+            </div>
+
+            <span class="text-primary font-black uppercase tracking-[0.3em] text-xs">
+                Pedido Registrado
+            </span>
+
+            <h1 class="text-4xl md:text-5xl font-black text-dark mt-3 mb-5">
+                Pedido feito!
+            </h1>
+
+            <p class="text-gray-500 text-lg leading-relaxed max-w-xl mx-auto mb-10">
+                Seu pedido foi enviado com sucesso. O Cupido já está preparando tudo com muito carinho 🏹
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+
+                <a href="/pedidos.html"
+                    class="bg-primary hover:bg-dark text-white px-8 py-4 rounded-2xl font-black uppercase tracking-wider text-sm transition-all shadow-glow">
+                    Ver Pedidos
+                </a>
+
+                <a href="/pagamento.html"
+                    class="bg-soft hover:bg-rose-100 text-primary px-8 py-4 rounded-2xl font-black uppercase tracking-wider text-sm transition-all">
+                    Novo Pedido
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="py-10 text-center text-rose-300 text-sm">
+        <p>&copy; 2026 Na Mira do Cupido</p>
+    </footer>
+
+</body>
+</html>
