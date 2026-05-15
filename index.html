@@ -5,8 +5,7 @@
 
     <meta charset="UTF-8" />
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
         Na Mira do Cupido | Arraiá 2026
@@ -54,7 +53,6 @@
     </script>
 
     <style>
-
         html {
             scroll-behavior: smooth;
         }
@@ -128,6 +126,31 @@
             animation: pulse 2s infinite;
         }
 
+        .heart-trail {
+            position: fixed;
+            pointer-events: none;
+            user-select: none;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            color: #e11d48;
+            font-size: 18px;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.9);
+            animation: trail-float 1.1s ease-out forwards;
+        }
+
+        @keyframes trail-float {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -140%) scale(1.7);
+            }
+        }
+
         @keyframes pulse {
 
             0%,
@@ -159,7 +182,6 @@
                 opacity: .5;
             }
         }
-
     </style>
 
 </head>
@@ -172,12 +194,9 @@
 
         <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
 
-            <a href="#home"
-                class="flex items-center gap-3">
+            <a href="#home" class="flex items-center gap-3">
 
-                <img src="./assets/img/dec.png"
-                    class="h-12 heart"
-                    loading="lazy"
+                <img src="./assets/img/dec.png" class="h-12 heart" loading="lazy"
                     onerror="this.src='https://cdn-icons-png.flaticon.com/512/2589/2589175.png'" />
 
                 <div>
@@ -197,15 +216,9 @@
             <button onclick="toggleMenu()"
                 class="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:bg-white transition text-primary shadow-sm">
 
-                <svg class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2.5"
-                        d="M4 6h16M4 12h16m-7 6h7">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7">
                     </path>
 
                 </svg>
@@ -227,8 +240,7 @@
                 Menu
             </h2>
 
-            <button onclick="toggleMenu()"
-                class="text-4xl text-gray-400 hover:text-primary">
+            <button onclick="toggleMenu()" class="text-4xl text-gray-400 hover:text-primary">
 
                 &times;
 
@@ -238,32 +250,28 @@
 
         <div class="p-6 flex flex-col gap-3">
 
-            <a href="#home"
-                onclick="toggleMenu()"
+            <a href="#home" onclick="toggleMenu()"
                 class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
 
                 🏹 Início
 
             </a>
 
-            <a href="#servicos"
-                onclick="toggleMenu()"
+            <a href="#servicos" onclick="toggleMenu()"
                 class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
 
                 🎁 Ver Mimos
 
             </a>
 
-            <a href="#ia"
-                onclick="toggleMenu()"
+            <a href="#ia" onclick="toggleMenu()"
                 class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
 
                 🤖 Correio Elegante IA
 
             </a>
 
-            <a href="#fila"
-                onclick="toggleMenu()"
+            <a href="#fila" onclick="toggleMenu()"
                 class="bg-soft hover:bg-rose-100 transition rounded-2xl p-4 font-bold text-dark">
 
                 💬 Retirada & Fila
@@ -274,21 +282,19 @@
 
     </div>
 
-    <div id="overlay"
-        onclick="toggleMenu()"
-        class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-[70]">
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-[70]">
     </div>
 
     <!-- HERO -->
 
-    <section id="home"
-        class="relative min-h-screen flex items-center justify-center px-6 pt-20">
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
 
         <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
             <div>
 
-                <span class="inline-flex items-center gap-2 bg-white shadow-card px-5 py-2 rounded-full text-primary font-bold text-sm">
+                <span
+                    class="inline-flex items-center gap-2 bg-white shadow-card px-5 py-2 rounded-full text-primary font-bold text-sm">
 
                     💘 Festa Junina 2026
 
@@ -329,11 +335,8 @@
 
             <div class="relative flex justify-center">
 
-                <img src="./assets/img/logo.png"
-                    class="relative w-full max-w-md drop-shadow-2xl heart"
-                    loading="eager"
-                    fetchpriority="high"
-                    onerror="this.src='https://cdn-icons-png.flaticon.com/512/2904/2904973.png'" />
+                <img src="./assets/img/logo.png" class="relative w-full max-w-md drop-shadow-2xl heart" loading="eager"
+                    fetchpriority="high" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2904/2904973.png'" />
 
             </div>
 
@@ -343,8 +346,7 @@
 
     <!-- IA -->
 
-    <section id="ia"
-        class="max-w-6xl mx-auto px-6 pb-24">
+    <section id="ia" class="max-w-6xl mx-auto px-6 pb-24">
 
         <div class="bg-white rounded-[40px] shadow-card border border-rose-100 p-8 md:p-12">
 
@@ -372,7 +374,7 @@
                     <button onclick="gerarCantada()"
                         class="mt-5 btn-primary text-white px-8 py-4 rounded-2xl font-black shadow-glow">
 
-                        Gerar Cantada 💘
+                        Gerar Cantada ✉️
 
                     </button>
 
@@ -388,8 +390,7 @@
 
                         </p>
 
-                        <p id="resultadoCantada"
-                            class="text-dark text-xl font-bold leading-relaxed">
+                        <p id="resultadoCantada" class="text-dark text-xl font-bold leading-relaxed">
 
                             🌽 “Ocê ainda não gerou sua cantada...”
 
@@ -407,8 +408,7 @@
 
     <!-- FILA -->
 
-    <section id="fila"
-        class="max-w-6xl mx-auto px-6 pb-24">
+    <section id="fila" class="max-w-6xl mx-auto px-6 pb-24">
 
         <div class="bg-gradient-to-r from-rose-500 to-pink-500 rounded-[40px] p-10 text-white shadow-glow">
 
@@ -429,7 +429,8 @@
 
                     <p class="mt-5 text-white/90 leading-relaxed">
 
-                        Entre na fila virtual para retirar o pedido sem bagunça e converse direto com a barraca pelo WhatsApp.
+                        Entre na fila virtual para retirar o pedido sem bagunça e converse direto com a barraca pelo
+                        WhatsApp.
 
                     </p>
 
@@ -459,8 +460,7 @@
 
                     </div>
 
-                    <a href="https://wa.me/5515999999999"
-                        target="_blank"
+                    <a href="https://wa.me/5515999999999" target="_blank"
                         class="w-full bg-white text-primary py-4 rounded-2xl font-black flex items-center justify-center text-center">
 
                         Falar com a Barraca
@@ -477,8 +477,7 @@
 
     <!-- PRODUTOS -->
 
-    <section id="servicos"
-        class="max-w-7xl mx-auto px-6 pb-40">
+    <section id="servicos" class="max-w-7xl mx-auto px-6 pb-40">
 
         <div class="text-center mb-14">
 
@@ -496,8 +495,7 @@
 
         </div>
 
-        <div id="lista-produtos"
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div id="lista-produtos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
             <div class="col-span-full text-center py-20">
 
@@ -528,14 +526,13 @@
 
     <!-- MODAL -->
 
-    <div id="modal-revisao"
-        class="fixed inset-0 z-[110] hidden">
+    <div id="modal-revisao" class="fixed inset-0 z-[110] hidden">
 
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-md"
-            onclick="fecharModal()">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-md" onclick="fecharModal()">
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full bg-white rounded-t-[40px] p-8 max-h-[92vh] overflow-y-auto shadow-2xl">
+        <div
+            class="absolute bottom-0 left-0 w-full bg-white rounded-t-[40px] p-8 max-h-[92vh] overflow-y-auto shadow-2xl">
 
             <div class="max-w-2xl mx-auto">
 
@@ -562,8 +559,7 @@
 
                 </div>
 
-                <div id="itens-carrinho"
-                    class="space-y-6 mb-10">
+                <div id="itens-carrinho" class="space-y-6 mb-10">
                 </div>
 
                 <div class="border-t border-rose-100 pt-8 pb-4">
@@ -574,8 +570,7 @@
                             Total do Pedido:
                         </span>
 
-                        <span id="total-pedido"
-                            class="text-4xl font-black text-primary">
+                        <span id="total-pedido" class="text-4xl font-black text-primary">
                             R$ 0,00
                         </span>
 
@@ -584,7 +579,7 @@
                     <button onclick="finalizarWhatsApp()"
                         class="w-full bg-primary text-white py-5 rounded-2xl font-black text-xl shadow-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
 
-                        FINALIZAR PEDIDO 💘
+                        FINALIZAR PEDIDO ✉️
 
                     </button>
 
@@ -609,7 +604,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
+function getProductIcon(nome = "") {
 
+    const n = nome.toLowerCase();
+
+    if (n.includes("ingresso")) return "✉️";
+    if (n.includes("buquê") || n.includes("flor")) return "💐";
+    if (n.includes("bombom") || n.includes("chocolate")) return "🍫";
+    if (n.includes("carta") || n.includes("correio")) return "💌";
+    if (n.includes("urso") || n.includes("pelúcia")) return "🧸";
+    if (n.includes("anel") || n.includes("joia")) return "💍";
+    if (n.includes("caixa")) return "🎁";
+
+    return "💘";
+}
         const SUPABASE_URL =
             'https://byslhgoryfhwhkxhklrj.supabase.co';
 
@@ -648,6 +656,22 @@
                 .innerText = aleatoria;
         }
 
+
+
+        function getProductIcon(nome = "") {
+
+    const n = nome.toLowerCase();
+
+    if (n.includes("ingresso")) return "✉️";
+    if (n.includes("buquê") || n.includes("flor")) return "💐";
+    if (n.includes("bombom") || n.includes("chocolate")) return "🍫";
+    if (n.includes("carta") || n.includes("correio")) return "💌";
+    if (n.includes("urso") || n.includes("pelúcia")) return "🧸";
+    if (n.includes("anel") || n.includes("joia")) return "💍";
+    if (n.includes("caixa")) return "🎁";
+
+    return "💘";
+}
         function getImageUrl(imagemNoBanco) {
 
             if (!imagemNoBanco)
@@ -713,22 +737,17 @@
 
                 <div class="bg-white p-5 rounded-[32px] shadow-card card-hover transition-all border border-rose-50 flex flex-col h-full">
 
-                    <div class="relative w-full pt-[100%] mb-5 rounded-2xl overflow-hidden shadow-inner group">
+<div class="w-full aspect-square mb-5 rounded-2xl bg-soft border border-rose-100 flex items-center justify-center text-6xl relative">
 
-                        <img src="${getImageUrl(p.imagem)}"
-                            loading="lazy"
-                            decoding="async"
-                            class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+    <div class="text-6xl">
+        ${getProductIcon(p.nome)}
+    </div>
 
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+    <div class="absolute top-3 right-3 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full font-black text-primary shadow-sm border border-rose-100 text-sm">
+        R$ ${p.preco.toFixed(2)}
+    </div>
 
-                        <div class="absolute top-3 right-3 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full font-black text-primary shadow-sm border border-rose-100 text-sm">
-
-                            R$ ${p.preco.toFixed(2)}
-
-                        </div>
-
-                    </div>
+</div>
 
                     <div class="px-2 flex-1 flex flex-col">
 
@@ -834,8 +853,9 @@
 
                     <div class="flex items-center gap-5 bg-rose-50/40 p-5 rounded-[28px] border border-rose-100/50">
 
-                        <img src="${getImageUrl(p.imagem)}"
-                            class="w-20 h-20 rounded-2xl object-cover shadow-sm border border-white">
+                        <div class="w-20 h-20 rounded-2xl bg-white/90 shadow-sm border border-white flex items-center justify-center text-4xl">
+                            ${getProductIcon(p.nome)}
+                        </div>
 
                         <div class="flex-1">
 
@@ -913,6 +933,31 @@
 
             document.getElementById('overlay')
                 .classList.toggle('hidden');
+        }
+
+        let lastHeartTime = 0;
+
+        document.addEventListener('pointermove', event => {
+            const now = performance.now();
+            if (now - lastHeartTime < 60) return;
+            lastHeartTime = now;
+            createHeartTrail(event.clientX, event.clientY);
+        });
+
+        function createHeartTrail(x, y) {
+            const heart = document.createElement('div');
+            heart.className = 'heart-trail';
+            heart.innerText = '♥';
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            heart.style.color = ['#e11d48', '#fb7185', '#fda4af'][Math.floor(Math.random() * 3)];
+            heart.style.fontSize = `${14 + Math.random() * 14}px`;
+
+            document.body.appendChild(heart);
+
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
         }
 
         function finalizarWhatsApp() {
