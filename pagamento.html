@@ -234,45 +234,24 @@
                 total: pedidoSalvo.total
             };
 
-            try {
+           try {
 
-                const response = await fetch('http://localhost:3000/api/pedidos', {
+    localStorage.setItem(
+        'pedidoAtual',
+        JSON.stringify(pedido)
+    );
 
-                    method: 'POST',
+   
 
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+    window.location.href = 'pagamento-final.html';
 
-                    body: JSON.stringify(pedido)
-                });
+} catch (error) {
 
-                let data = {};
+    errorEl.textContent = 'Erro ao finalizar pedido.';
 
-                try {
-                    data = await response.json();
-                } catch {
-                    data = {};
-                }
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        data.mensagem ||
-                        'Não foi possível processar o pedido.'
-                    );
-                }
-
-                localStorage.removeItem('pedidoAtual');
-
-                window.location.href = 'pagamento-final.html';
-
-            } catch (error) {
-
-                errorEl.textContent = error.message;
-
-                errorEl.hidden = false;
-            }
+    errorEl.hidden = false;
+}
+            
         });
 
     </script>
